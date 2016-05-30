@@ -78,13 +78,13 @@ module.exports = function(grunt) {
                     'src/api/scripts/decorators.js',
                     'src/api/scripts/units.js'
                 ],
-                dest: 'dist/timeline.min.js',
+                dest: 'dist/timeline.js',
             },
         },
         uglify: {
             dist: {
                 files: {
-                    'dist/timeline.min.js': ['dist/timeline.min.js']
+                    'dist/timeline.min.js': ['dist/timeline.js']
                 }
             }
         },
