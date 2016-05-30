@@ -241,7 +241,7 @@
         // if a new (larger) width is needed by the band
         // then: a) updates the band's bandInfo.width
         //
-        // desiredWidth for the band is 
+        // desiredWidth for the band is
         //   (number of tracks + margin) * track increment
         if (!this._timeline.autoWidth) {
             return; // early return
@@ -349,7 +349,7 @@
     };
 
     Timeline._Band.prototype.getMaxVisibleDateAfterDelta = function(delta) {
-        // Max date visible on band after delta px view change is applied 
+        // Max date visible on band after delta px view change is applied
         return this._ether.pixelOffsetToDate(this._viewLength + delta);
     };
 
@@ -725,5 +725,11 @@
 
     Timeline._Band.prototype.closeBubble = function() {
         SimileAjax.WindowManager.cancelPopups();
+    };
+
+    Timeline._Band.prototype.addDecorator = function(decorator) {
+        this._decorators.push(decorator);
+        decorator.initialize(this,this._timeline);
+        decorator.paint();
     };
 }());
