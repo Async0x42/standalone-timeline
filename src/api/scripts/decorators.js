@@ -22,33 +22,14 @@
         this._endDate = (typeof params.endDate === "string") ?
             this._unit.parseFromObject(params.endDate) : params.endDate;
 
-        if (params.startLabel !== undefined && params.startLabel !== null) {
-            this._startLabel = params.startLabel;
-        }
-        else {
-            this._startLabel = "";
-        }
-
-        if (params.endLabel !== undefined && params.endLabel !== null) {
-            this._endLabel = params.endLabel;
-        }
-        else {
-            this._endLabel = "";
-        }
-
+        this._startLabel = params.startLabel !== undefined ? params.startLabel : ""; // not null!
+        this._endLabel = params.endLabel !== undefined ? params.endLabel : ""; // not null!
         this._color = params.color;
         this._cssClass = params.cssClass !== undefined ? params.cssClass : null;
-
-        if (params.opacity !== undefined && params.opacity !== null) {
-            this._opacity = params.opacity;
-        }
-        else {
-            this._opacity = 100;
-        }
-
+        this._opacity = params.opacity !== undefined ? params.opacity : 100;
         // Default z is 10, behind everything but background grid.
         // If inFront, then place just behind events, in front of everything else
-        this._zIndex = (params.inFront !== undefined && params.inFront !== null && params.inFront) ? 113 : 10;
+        this._zIndex = (params.inFront !== undefined && params.inFront) ? 113 : 10;
     };
 
     Timeline.SpanHighlightDecorator.prototype.initialize = function(band, timeline) {
