@@ -30,7 +30,7 @@
      *==================================================
      */
 
-    /* 
+    /*
      *    eventPaintListener functions receive calls about painting.
      *    function(band, op, evt, els)
      *       context: 'this' will be an OriginalEventPainter object.
@@ -188,7 +188,7 @@
 
     Timeline.OriginalEventPainter.prototype._prepareForPainting = function() {
         // Remove everything previously painted: highlight, line and event layers.
-        // Prepare blank layers for painting. 
+        // Prepare blank layers for painting.
         var band = this._band;
 
         if (this._backLayer === null) {
@@ -320,6 +320,7 @@
 
         var tapeElmtData = this._paintEventTape(evt, track, startPixel, endPixel,
             color, theme.event.instant.impreciseOpacity, metrics, theme, 0);
+
         var els = [iconElmtData.elmt, labelElmtData.elmt, tapeElmtData.elmt];
 
         var self = this;
@@ -367,8 +368,16 @@
         color = color !== null ? color : theme.event.duration.color;
 
         var tapeElmtData = this._paintEventTape(evt, track, startPixel, endPixel, color, 100, metrics, theme, 0);
-        var labelElmtData = this._paintEventLabel(evt, text, labelLeft, labelTop, labelSize.width,
-            labelSize.height, theme, labelDivClassName, highlightIndex);
+
+        if (labelSize.width > (endPixel - startPixel)) {
+            var labelElmtData = this._paintEventLabel(evt, text, startPixel, labelTop, labelSize.width,
+                labelSize.height, theme, labelDivClassName, highlightIndex);
+        }
+        else {
+            var labelElmtData = this._paintEventLabel(evt, text, startPixel, labelTop, (endPixel - startPixel),
+                labelSize.height, theme, labelDivClassName, highlightIndex);
+        }
+
         var els = [tapeElmtData.elmt, labelElmtData.elmt];
 
         var self = this;
