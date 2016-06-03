@@ -9565,8 +9565,8 @@ SimileAjax.WindowManager._findDropTarget = function(elmt) {
         this._endDate = (typeof params.endDate === "string") ?
             this._unit.parseFromObject(params.endDate) : params.endDate;
 
-        this._startLabel = params.startLabel !== undefined ? params.startLabel : ""; // not null!
-        this._endLabel = params.endLabel !== undefined ? params.endLabel : ""; // not null!
+        this._startLabel = (params.startLabel !== undefined && params.startLabel !== null) ? params.startLabel: ""; // not null!
+        this._endLabel = (params.endLabel !== undefined && params.endLabel !== null) ? params.endLabel: ""; // not null!
         this._color = params.color;
         this._cssClass = params.cssClass !== undefined ? params.cssClass : null;
         this._opacity = params.opacity !== undefined ? params.opacity : 100;
@@ -9811,3 +9811,25 @@ SimileAjax.WindowManager._findDropTarget = function(elmt) {
         return new Date(v.getTime() + n);
     };
 }());
+
+/*==================================================
+ *  Localization of labellers.js
+ *==================================================
+ */
+
+Timeline.GregorianDateLabeller.monthNames["en"] = [
+    "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+];
+
+Timeline.GregorianDateLabeller.dayNames["en"] = [
+    "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
+];
+
+/*==================================================
+ *  Common localization strings
+ *==================================================
+ */
+
+Timeline.strings["en"] = {
+    wikiLinkLabel: "Discuss"
+};
