@@ -8,8 +8,8 @@
     <script src="../dist/timeline.min.js"></script>
 
     <!-- Localização -->
-    <script src="../src/api/scripts/l10n/en/timeline.js"></script>
-    <script src="../src/api/scripts/l10n/en/labellers.js"></script>
+    <script src="../src/timeline/scripts/l10n/en/timeline.js"></script>
+    <script src="../src/timeline/scripts/l10n/en/labellers.js"></script>
 
     <script>
         var tl;
@@ -72,8 +72,8 @@
             var date = "Fri Nov 22 1963 13:00:00 GMT-0600"
             var bandInfos = [
                 Timeline.createHotZoneBandInfo({
-                    width:          "80%", 
-                    intervalUnit:   Timeline.DateTime.WEEK, 
+                    width:          "80%",
+                    intervalUnit:   Timeline.DateTime.WEEK,
                     intervalPixels: 200,
                     zones:          zones,
                     eventSource:    eventSource,
@@ -82,12 +82,12 @@
                   //  theme:          theme
                 }),
                 Timeline.createHotZoneBandInfo({
-                    width:          "20%", 
-                    intervalUnit:   Timeline.DateTime.MONTH, 
+                    width:          "20%",
+                    intervalUnit:   Timeline.DateTime.MONTH,
                     intervalPixels: 200,
-                    zones:          zones2, 
+                    zones:          zones2,
                     eventSource:    eventSource,
-                    date:           date, 
+                    date:           date,
                     timeZone:       -6,
                     overview:       true
                    // theme:          theme
@@ -139,7 +139,7 @@
         }
 
         function themeSwitch(){
-            var timeline = document.getElementById('tl');		
+            var timeline = document.getElementById('tl');
             timeline.className = (timeline.className.indexOf('dark-theme') != -1) ? timeline.className.replace('dark-theme', '') : timeline.className += ' dark-theme';
         }
     </script>
@@ -191,7 +191,7 @@
     <p>Timeline is a DHTML-based AJAXy widget for visualizing time-based events.
         It is like <a href="http://maps.google.com/">Google Maps</a> for time-based information.
         Below is a live example that you can play with. Pan the timeline by
-        dragging it horizontally or using your mouse-wheel. Click on an event icon or tape 
+        dragging it horizontally or using your mouse-wheel. Click on an event icon or tape
         for details on the event. The arrow keys can also be used to navigate the timeline.
     </p>
 
@@ -201,7 +201,7 @@
 
     <p>Just like Google Maps, Timeline can be used with zero software installation,
         server-side or client-side. And like Google Maps, you can populate Timeline
-        with data by pointing it to an XML file (here is the 
+        with data by pointing it to an XML file (here is the
         <a href="jfk.xml">data file</a> for the timeline above).
         But Timeline is not limited to only that means of loading data; for instance,
         we have just added <a href="examples/cubism/cubism.html">JSON support</a>.
@@ -210,7 +210,7 @@
     <h2>Live Examples</h2>
     <ul>
         <li><a href="examples/religions/religions.html">Religion Timelines</a>:
-            recommended to be viewed on a <em>huge monitor</em>, 
+            recommended to be viewed on a <em>huge monitor</em>,
             2000 years of Jewish and Christianity history, all
             mashed up, scrolling side-by-side.
         </li>
@@ -259,7 +259,7 @@
     </ul>
 
     <h2>Licensing</h2>
-    <p>Timeline is open source software and is licensed under the 
+    <p>Timeline is open source software and is licensed under the
         <a href="http://simile.mit.edu/license.html">BSD license</a>.</p>
     </p>
 

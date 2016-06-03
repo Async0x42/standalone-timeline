@@ -17,7 +17,7 @@ if (typeof SimileAjax === "undefined") {
     };
 
     SimileAjax.Platform = new Object();
-    SimileAjax.urlPrefix = (typeof AjaxUrlPrefix !== 'undefined') ? AjaxUrlPrefix : '/dist/src/';
+    SimileAjax.urlPrefix = (typeof AjaxUrlPrefix !== 'undefined') ? AjaxUrlPrefix : '/dist/src/ajax/';
 }
 
 /*==================================================
@@ -2854,7 +2854,7 @@ SimileAjax.ListenerQueue.prototype.fire = function(handlerName, args) {
 SimileAjax.History = {
     maxHistoryLength: 10,
     historyFile: "__history__.html",
-    enabled: true,
+    enabled: false,
     _initialized: false,
     _listeners: new SimileAjax.ListenerQueue(),
     _actions: [],
@@ -3486,7 +3486,7 @@ SimileAjax.WindowManager._findDropTarget = function(elmt) {
     if (typeof TimelineUrlPrefix !== 'undefined') {
         Timeline.urlPrefix = TimelineUrlPrefix;
     } else {
-        Timeline.urlPrefix = '/dist/src/api/';
+        Timeline.urlPrefix = '/dist/src/timeline/';
     }
 
     var defaultClientLocale = defaultServerLocale;
@@ -6819,7 +6819,7 @@ SimileAjax.WindowManager._findDropTarget = function(elmt) {
      *==================================================
      */
 
-    /* 
+    /*
      *    eventPaintListener functions receive calls about painting.
      *    function(band, op, evt, els)
      *       context: 'this' will be an OriginalEventPainter object.
@@ -6977,7 +6977,7 @@ SimileAjax.WindowManager._findDropTarget = function(elmt) {
 
     Timeline.OriginalEventPainter.prototype._prepareForPainting = function() {
         // Remove everything previously painted: highlight, line and event layers.
-        // Prepare blank layers for painting. 
+        // Prepare blank layers for painting.
         var band = this._band;
 
         if (this._backLayer === null) {
@@ -7109,6 +7109,7 @@ SimileAjax.WindowManager._findDropTarget = function(elmt) {
 
         var tapeElmtData = this._paintEventTape(evt, track, startPixel, endPixel,
             color, theme.event.instant.impreciseOpacity, metrics, theme, 0);
+
         var els = [iconElmtData.elmt, labelElmtData.elmt, tapeElmtData.elmt];
 
         var self = this;
@@ -7156,8 +7157,16 @@ SimileAjax.WindowManager._findDropTarget = function(elmt) {
         color = color !== null ? color : theme.event.duration.color;
 
         var tapeElmtData = this._paintEventTape(evt, track, startPixel, endPixel, color, 100, metrics, theme, 0);
-        var labelElmtData = this._paintEventLabel(evt, text, labelLeft, labelTop, labelSize.width,
-            labelSize.height, theme, labelDivClassName, highlightIndex);
+
+        if (labelSize.width > (endPixel - startPixel)) {
+            var labelElmtData = this._paintEventLabel(evt, text, startPixel, labelTop, labelSize.width,
+                labelSize.height, theme, labelDivClassName, highlightIndex);
+        }
+        else {
+            var labelElmtData = this._paintEventLabel(evt, text, startPixel, labelTop, (endPixel - startPixel),
+                labelSize.height, theme, labelDivClassName, highlightIndex);
+        }
+
         var els = [tapeElmtData.elmt, labelElmtData.elmt];
 
         var self = this;

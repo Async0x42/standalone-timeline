@@ -7,17 +7,17 @@ module.exports = function(grunt) {
                 files: [
                     'Gruntfile.js',
                     'demo/index.html',
-                    'src/scripts/*.js',
-                    'src/api/scripts/**/*.js',
-                    'src/api/scripts/*.js',
-                    'src/api/*.js',
+                    'src/ajax/scripts/*.js',
+                    'src/timeline/scripts/**/*.js',
+                    'src/timeline/scripts/*.js',
+                    'src/timeline/*.js',
                 ],
                 tasks: ['concat'],
             },
             css: {
                 files: [
-                    'src/api/styles/*.css',
-                    'src/styles/*.css'
+                    'src/timeline/styles/*.css',
+                    'src/ajax/styles/*.css'
                 ],
                 tasks: ['cssmin'],
             },
@@ -26,9 +26,9 @@ module.exports = function(grunt) {
                     livereload: true
                 },
                 files: [
-                    'src/scripts/*.js',
-                    'src/styles/*.css',
-                    'src/api/styles/*.css',
+                    'src/ajax/scripts/*.js',
+                    'src/ajax/styles/*.css',
+                    'src/timeline/styles/*.css',
                     'demo/index.html'
                 ]
             }
@@ -46,37 +46,37 @@ module.exports = function(grunt) {
             dist: {
                 src: [
                     // SIMILE-AJAX-API
-                    'src/simile-ajax-api.js',
-                    'src/scripts/platform.js',
-                    'src/scripts/debug.js',
-                    'src/scripts/xmlhttp.js',
-                    'src/scripts/json.js',
-                    'src/scripts/dom.js',
-                    'src/scripts/graphics.js',
-                    'src/scripts/date-time.js',
-                    'src/scripts/string.js',
-                    'src/scripts/html.js',
-                    'src/scripts/data-structure.js',
-                    'src/scripts/units.js',
-                    'src/scripts/ajax.js',
-                    'src/scripts/history.js',
-                    'src/scripts/window-manager.js',
+                    'src/ajax/simile-ajax-api.js',
+                    'src/ajax/scripts/platform.js',
+                    'src/ajax/scripts/debug.js',
+                    'src/ajax/scripts/xmlhttp.js',
+                    'src/ajax/scripts/json.js',
+                    'src/ajax/scripts/dom.js',
+                    'src/ajax/scripts/graphics.js',
+                    'src/ajax/scripts/date-time.js',
+                    'src/ajax/scripts/string.js',
+                    'src/ajax/scripts/html.js',
+                    'src/ajax/scripts/data-structure.js',
+                    'src/ajax/scripts/units.js',
+                    'src/ajax/scripts/ajax.js',
+                    'src/ajax/scripts/history.js',
+                    'src/ajax/scripts/window-manager.js',
                     // API
-                    'src/api/timeline-api.js',
-                    'src/api/scripts/timeline.js',
-                    'src/api/scripts/band.js',
-                    'src/api/scripts/themes.js',
-                    'src/api/scripts/ethers.js',
-                    'src/api/scripts/ether-painters.js',
-                    'src/api/scripts/event-utils.js',
-                    'src/api/scripts/labellers.js',
-                    'src/api/scripts/sources.js',
-                    'src/api/scripts/original-painter.js',
-                    'src/api/scripts/detailed-painter.js',
-                    'src/api/scripts/overview-painter.js',
-                    'src/api/scripts/compact-painter.js',
-                    'src/api/scripts/decorators.js',
-                    'src/api/scripts/units.js'
+                    'src/timeline/timeline-api.js',
+                    'src/timeline/scripts/timeline.js',
+                    'src/timeline/scripts/band.js',
+                    'src/timeline/scripts/themes.js',
+                    'src/timeline/scripts/ethers.js',
+                    'src/timeline/scripts/ether-painters.js',
+                    'src/timeline/scripts/event-utils.js',
+                    'src/timeline/scripts/labellers.js',
+                    'src/timeline/scripts/sources.js',
+                    'src/timeline/scripts/original-painter.js',
+                    'src/timeline/scripts/detailed-painter.js',
+                    'src/timeline/scripts/overview-painter.js',
+                    'src/timeline/scripts/compact-painter.js',
+                    'src/timeline/scripts/decorators.js',
+                    'src/timeline/scripts/units.js'
                 ],
                 dest: 'dist/timeline.js',
             },
@@ -96,10 +96,10 @@ module.exports = function(grunt) {
             target: {
                 files: {
                     'dist/timeline.min.css': [
-                        'src/styles/graphics.css',
-                        'src/api/styles/timeline.css',
-                        'src/api/styles/ethers.css',
-                        'src/api/styles/events.css'
+                        'src/ajax/styles/graphics.css',
+                        'src/timeline/styles/timeline.css',
+                        'src/timeline/styles/ethers.css',
+                        'src/timeline/styles/events.css'
                     ]
                 }
             }
@@ -111,8 +111,8 @@ module.exports = function(grunt) {
                     {
                         expand: true,
                         src: [
-                            'src/images/*',
-                            'src/api/images/*'
+                            'src/ajax/images/*',
+                            'src/timeline/images/*'
                         ],
                         dest: 'dist/'
                     },
@@ -120,9 +120,9 @@ module.exports = function(grunt) {
                         expand: true,
                         flatten: true,
                         src: [
-                            'src/api/images/*'
+                            'src/timeline/images/*'
                         ],
-                        dest: 'dist/src/images/'
+                        dest: 'dist/images/'
                     }
                 ],
             },
