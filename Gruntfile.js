@@ -120,6 +120,7 @@ module.exports = function(grunt) {
                         expand: true,
                         flatten: true,
                         src: [
+                            'src/ajax/images/*',
                             'src/timeline/images/*'
                         ],
                         dest: 'dist/images/'

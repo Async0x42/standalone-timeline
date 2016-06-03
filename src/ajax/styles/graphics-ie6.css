@@ -48,25 +48,25 @@
 
 .simileAjax-bubble-arrow-point-left-pngNotTranslucent {
     filter: expression(
-        "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + SimileAjax.urlPrefix + "images/bubble-arrow-point-left.png', sizingMethod='crop')"
+        "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + SimileAjax.urlPrefix + "images/bubble-left-arrow.png', sizingMethod='crop')"
     );
 }
 
 .simileAjax-bubble-arrow-point-right-pngNotTranslucent {
     filter: expression(
-        "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + SimileAjax.urlPrefix + "images/bubble-arrow-point-right.png', sizingMethod='crop')"
+        "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + SimileAjax.urlPrefix + "images/bubble-right-arrow.png', sizingMethod='crop')"
     );
 }
 
 .simileAjax-bubble-arrow-point-up-pngNotTranslucent {
     filter: expression(
-        "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + SimileAjax.urlPrefix + "images/bubble-arrow-point-up.png', sizingMethod='crop')"
+        "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + SimileAjax.urlPrefix + "images/bubble-top-arrow.png', sizingMethod='crop')"
     );
 }
 
 .simileAjax-bubble-arrow-point-down-pngNotTranslucent {
     filter: expression(
-        "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + SimileAjax.urlPrefix + "images/bubble-arrow-point-down.png', sizingMethod='crop')"
+        "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + SimileAjax.urlPrefix + "images/bubble-bottom-arrow.png', sizingMethod='crop')"
     );
 }
 
