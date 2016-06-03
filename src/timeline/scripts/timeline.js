@@ -33,7 +33,7 @@
      *==================================================
      */
     // Note: version is also stored in the build.xml file
-    Timeline.version = '2.3.0'; // use format 'pre 1.2.3' for trunk versions 
+    Timeline.version = '2.3.0'; // use format 'pre 1.2.3' for trunk versions
     Timeline.ajax_lib_version = SimileAjax.version; // Waiting for version string method from Ajax library
     Timeline.display_version = Timeline.version + ' (with Ajax lib ' + Timeline.ajax_lib_version + ')';
     // cf method Timeline.writeVersion
@@ -283,7 +283,7 @@
             bandInfos[0].theme.timeline_start;
         this.timeline_stop = bandInfos && bandInfos[0] && bandInfos[0].theme &&
             bandInfos[0].theme.timeline_stop;
-        this.timeline_at_start = false; // already at start or stop? Then won't 
+        this.timeline_at_start = false; // already at start or stop? Then won't
         this.timeline_at_stop = false; // try to move further in the wrong direction
 
         this._initialize();
@@ -545,7 +545,7 @@
         containerDiv.appendChild(message.containerDiv);
 
         message.contentDiv.className = 'timeline-message';
-        message.contentDiv.innerHTML = '<img src="' + Timeline.urlPrefix + 'images/progress-running.gif" /> Loading...';
+        message.contentDiv.innerHTML = '<img class="timeline-progress-running" /> Loading...';
 
         this.showLoadingMessage = function() {
             message.containerDiv.style.display = 'block';
@@ -604,7 +604,7 @@
         // If any of the bands has noted that it is changing the others,
         // then this shift is a secondary shift in reaction to the real shift,
         // which already happened. In such cases, ignore it. (The issue is
-        // that a positive original shift can cause a negative secondary shift, 
+        // that a positive original shift can cause a negative secondary shift,
         // as the bands adjust.)
         var secondary_shift = false;
         for (var i = 0; i < this._bands.length && !secondary_shift; i++) {
