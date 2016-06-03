@@ -124,7 +124,7 @@ div.simileAjax-bubble-arrow-point-left {
     height:     49px;
 }
 .simileAjax-bubble-arrow-point-left-pngTranslucent {
-    background: url(images/bubble-left-arrow.png) center right no-repeat;
+    background: url(images/bubble-arrow-point-left.png) center right no-repeat;
 }
 
 div.simileAjax-bubble-arrow-point-right {
@@ -134,7 +134,7 @@ div.simileAjax-bubble-arrow-point-right {
     height:     49px;
 }
 .simileAjax-bubble-arrow-point-right-pngTranslucent {
-    background: url(images/bubble-right-arrow.png) center left no-repeat;
+    background: url(images/bubble-arrow-point-right.png) center left no-repeat;
 }
 
 div.simileAjax-bubble-arrow-point-up {
@@ -144,7 +144,7 @@ div.simileAjax-bubble-arrow-point-up {
     height:     100px;
 }
 .simileAjax-bubble-arrow-point-up-pngTranslucent {
-    background: url(images/bubble-top-arrow.png) bottom center no-repeat;
+    background: url(images/bubble-arrow-point-up.png) bottom center no-repeat;
 }
 
 div.simileAjax-bubble-arrow-point-down {
@@ -154,7 +154,7 @@ div.simileAjax-bubble-arrow-point-down {
     height:     100px;
 }
 .simileAjax-bubble-arrow-point-down-pngTranslucent {
-    background: url(images/bubble-bottom-arrow.png) bottom center no-repeat;
+    background: url(images/bubble-arrow-point-down.png) bottom center no-repeat;
 }
 
 
