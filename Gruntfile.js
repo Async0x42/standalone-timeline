@@ -61,7 +61,7 @@ module.exports = function(grunt) {
                     'src/ajax/scripts/ajax.js',
                     'src/ajax/scripts/history.js',
                     'src/ajax/scripts/window-manager.js',
-                    // API
+                    // TIMELINE
                     'src/timeline/timeline-api.js',
                     'src/timeline/scripts/timeline.js',
                     'src/timeline/scripts/band.js',
@@ -76,7 +76,10 @@ module.exports = function(grunt) {
                     'src/timeline/scripts/overview-painter.js',
                     'src/timeline/scripts/compact-painter.js',
                     'src/timeline/scripts/decorators.js',
-                    'src/timeline/scripts/units.js'
+                    'src/timeline/scripts/units.js',
+                    // TIMELINE LANGUAGE
+                    'src/timeline/scripts/l10n/en/labellers.js',
+                    'src/timeline/scripts/l10n/en/timeline.js'
                 ],
                 dest: 'dist/timeline.js',
             },

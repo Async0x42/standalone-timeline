@@ -37,7 +37,7 @@ look for image files, you can do this by creating a `<script>` tag in your
 Note that these are the default paths where standalone timeline will search for
 the image files.
 
-You will also need to include translations:
+You can add support for a translated language by modifying the grunt file, or by adding a script src similar to:
 
 ```html
 <script src="bower_components/standalone-timeline/src/timeline/scripts/l10n/en/timeline.js"></script>
