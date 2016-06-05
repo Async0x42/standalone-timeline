@@ -18,7 +18,7 @@ if (typeof SimileAjax === "undefined") {
 
     window.SimileAjax = SimileAjax;
     SimileAjax.Platform = new Object();
-    SimileAjax.urlPrefix = (typeof AjaxUrlPrefix !== 'undefined') ? AjaxUrlPrefix : '/dist/src/ajax/';
+    SimileAjax.urlPrefix = (typeof AjaxUrlPrefix !== 'undefined') ? AjaxUrlPrefix : 'src/ajax/';
 }
 
 /*==================================================
@@ -3487,7 +3487,7 @@ SimileAjax.WindowManager._findDropTarget = function(elmt) {
     if (typeof TimelineUrlPrefix !== 'undefined') {
         Timeline.urlPrefix = TimelineUrlPrefix;
     } else {
-        Timeline.urlPrefix = '/dist/src/timeline/';
+        Timeline.urlPrefix = 'src/timeline/';
     }
 
     var defaultClientLocale = defaultServerLocale;

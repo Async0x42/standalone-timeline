@@ -13,7 +13,7 @@
     if (typeof TimelineUrlPrefix !== 'undefined') {
         Timeline.urlPrefix = TimelineUrlPrefix;
     } else {
-        Timeline.urlPrefix = '/dist/src/timeline/';
+        Timeline.urlPrefix = 'src/timeline/';
     }
 
     var defaultClientLocale = defaultServerLocale;
