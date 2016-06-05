@@ -118,14 +118,6 @@ module.exports = function(grunt) {
                             'src/timeline/images/*'
                         ],
                         dest: 'dist/'
-                    },
-                    {
-                        expand: true,
-                        flatten: true,
-                        src: [
-                            'src/timeline/images/*'
-                        ],
-                        dest: 'dist/images/'
                     }
                 ],
             },
