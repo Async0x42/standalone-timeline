@@ -24,6 +24,7 @@
 
         this._startLabel = (params.startLabel !== undefined && params.startLabel !== null) ? params.startLabel: ""; // not null!
         this._endLabel = (params.endLabel !== undefined && params.endLabel !== null) ? params.endLabel: ""; // not null!
+        this._isInMiddle = (params.isInMiddle !== undefined && params.isInMiddle !== null) ? params.isInMiddle : false;
         this._color = params.color;
         this._cssClass = params.cssClass !== undefined ? params.cssClass : null;
         this._opacity = params.opacity !== undefined ? params.opacity : 100;
@@ -83,8 +84,20 @@
 
             this._layerDiv.appendChild(div);
 
+            var startCSS;
+            var endCSS;
+
+            if (this._isInMiddle) {
+                startCSS = "timeline-highlight-label-center timeline-highlight-label-center-start";
+                endCSS = "timeline-highlight-label-center timeline-highlight-label-center-end";
+            }
+            else {
+                startCSS = "timeline-highlight-label timeline-highlight-label-start";
+                endCSS = "timeline-highlight-label timeline-highlight-label-end";
+            }
+
             var tableStartLabel = createTable();
-            tableStartLabel.className = 'timeline-highlight-label timeline-highlight-label-start';
+            tableStartLabel.className = startCSS;
             var tdStart = tableStartLabel.rows[0].cells[0];
             tdStart.innerHTML = this._startLabel;
             if (this._cssClass) {
@@ -93,7 +106,7 @@
             this._layerDiv.appendChild(tableStartLabel);
 
             var tableEndLabel = createTable();
-            tableEndLabel.className = 'timeline-highlight-label timeline-highlight-label-end';
+            tableEndLabel.className = endCSS;
             var tdEnd = tableEndLabel.rows[0].cells[0];
             tdEnd.innerHTML = this._endLabel;
             if (this._cssClass) {
@@ -105,12 +118,20 @@
                 div.style.left = minPixel + "px";
                 div.style.width = (maxPixel - minPixel) + "px";
 
-                tableStartLabel.style.right = (this._band.getTotalViewLength() - minPixel) + "px";
-                tableStartLabel.style.width = (this._startLabel.length) + "em";
+                if (this._isInMiddle) {
+                    tableEndLabel.style.right = (this._band.getTotalViewLength() - minPixel) + "px";
+                    tableEndLabel.style.width = (this._endLabel.length) + "em";
 
-                tableEndLabel.style.left = maxPixel + "px";
-                tableEndLabel.style.width = (this._endLabel.length) + "em";
+                    tableStartLabel.style.left = minPixel + "px";
+                    tableStartLabel.style.width = (maxPixel - minPixel) + "px";
+                }
+                else {
+                    tableStartLabel.style.right = (this._band.getTotalViewLength() - minPixel) + "px";
+                    tableStartLabel.style.width = (this._startLabel.length) + "em";
 
+                    tableEndLabel.style.left = maxPixel + "px";
+                    tableEndLabel.style.width = (this._endLabel.length) + "em";
+                }
             } else {
                 div.style.top = minPixel + "px";
                 div.style.height = (maxPixel - minPixel) + "px";

@@ -64,6 +64,21 @@
 .timeline-vertical .timeline-highlight-label-start {text-align:center;}
 .timeline-vertical .timeline-highlight-label-end {text-align:center;}
 
+/*---------------- CENTERED HORIZONTAL LABEL -------------------*/
+.timeline-highlight-label-center {
+  position:absolute;
+  /* vertical-align:top; */
+  overflow:hidden;
+  font-size:90%;
+  font-weight:bold;
+  color:#999;
+  font-family: Trebuchet MS, Helvetica, Arial, sans serif;
+}
+
+.timeline-horizontal .timeline-highlight-label-center {top:0; height:100%;}
+.timeline-horizontal .timeline-highlight-label-center td {vertical-align:middle;}
+.timeline-horizontal .timeline-highlight-label-center-start td {text-align:center;}
+.timeline-horizontal .timeline-highlight-label-center-end td{text-align:center;}
 
 /*-------------------------------- DATE LABELS --------------------------------*/
 .timeline-date-label {
@@ -111,7 +126,7 @@
 
 .timeline-small-event-icon{width:1px; height:6px;}
 
-  
+
 /*--------------------------------- TIMELINE-------------------------*/
 .timeline-ether-bg{width:100%; height:100%;}
 .timeline-band-0 .timeline-ether-bg{background-color:#eee}
